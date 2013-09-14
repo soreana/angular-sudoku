@@ -1,0 +1,45 @@
+table{
+    margin: 20px;
+    border: 3px solid #000;
+}
+table tr{
+    padding: 2px;
+}
+
+table tr td{
+    border: 1px solid #000;
+    cursor: pointer;
+
+}
+table tr.b_true{
+    border-top: 3px solid #000;
+}
+
+table td.b_true{
+    border-left: 3px solid #000;
+}
+
+table tr td.even{
+    background: #ffc500;
+}
+table tr td.not_correct{
+    background: red;
+}
+table tr input{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+div.buttons{
+    margin: 20px;
+}
+div.error{
+    margin: 10px 20px 10px 20px;
+    font: 20px Arial;
+    color: red;
+}

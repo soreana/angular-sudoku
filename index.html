@@ -1,0 +1,36 @@
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ng-app: sudokuModule;" lang="en" > <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ng-app: sudokuModule;" lang="en" > <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ng-app: sudokuModule;" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ng-app: sudokuModule;" lang="en" > <!--<![endif]-->
+<html>
+<head>
+	<title>Sudoku task</title>
+	<link type="text/css" rel="stylesheet" href="./css/reset.css">
+	<link type="text/css" rel="stylesheet" href="./css/main.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="./js/sudoku.js"></script>
+
+</head>
+<body >
+<div class="exercise_2" ng-controller="sudokuController">
+	<table >
+		<tr ng-repeat="row in transform" class="b_{{$index % 3 == 0}}" >
+			<td ng-repeat="item in row"  class="b_{{$index % 3 == 0}} {{checkClass(item.isEven)}} {{item.valid}}">
+				<input type="text" ng-change="change(item)" ng-model="item.value" maxlength="1" />
+			</td>
+		</tr>
+	</table>
+
+	<div class="error" ng-show='not_valid_column'>Item exists in column</div>
+	<div class="error" ng-show='not_valid_row'>Item exists in row</div>
+	<div class="error" ng-show='not_valid_block'>Item exists in block</div>
+	<div class="error" ng-show='not_valid_odd'>Item must be odd</div>
+	<div class="error" ng-show='not_valid_even'>Item must be even</div>
+	<div class="error" ng-show='not_valid_item'>Item must be number</div>
+</div>
+<div class="version"></div>
+</body>
+</html>
